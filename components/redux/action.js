@@ -1,4 +1,4 @@
-import {ADD_TO_CART,REMOVE_FROM_CART} from './constants'
+import {ADD_TO_CART,REMOVE_FROM_CART,USER_LIST} from './constants'
 
 export function AddToCart(item)
 {
@@ -14,3 +14,11 @@ export function RemoveFromCart(item)
         data:item
     }
 }
+export function getUserlist(item)
+{
+    return{
+        type : USER_LIST
+        
+    }
+}
+

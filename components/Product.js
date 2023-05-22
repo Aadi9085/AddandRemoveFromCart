@@ -16,7 +16,7 @@ export default  Product =(props)=>
         useEffect(()=>{
                 let result=cartItem.filter((element)=>
                 {
-                    return element.name==item.name
+                    return element==item
                 })
                 if (result.length) {
                     setisAdded(true)
@@ -69,6 +69,7 @@ const styles=StyleSheet.create({
     },
     container:{
         flex:1,
+        marginBottom:40
     },
     text:{
         fontSize:20,

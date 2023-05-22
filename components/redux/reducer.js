@@ -1,4 +1,4 @@
-import {ADD_TO_CART,REMOVE_FROM_CART} from './constants';
+import {ADD_TO_CART,REMOVE_FROM_CART, SET_USER_DATA} from './constants';
 const initialState=[];
 export const reducer=(state=initialState,action)=>
 {
@@ -15,7 +15,16 @@ export const reducer=(state=initialState,action)=>
                 })
                 return [...result]
             break;
-    
+            case SET_USER_DATA:
+ 
+               return [
+                    
+                //this is cart data 
+                action.data
+                 //on which the action performed, wala data
+                //now get the data into the userlist components
+             ]
+            break;
         default:
             return state
             break;

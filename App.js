@@ -2,67 +2,27 @@
 import React from 'react';
 
 import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
   View,
 } from 'react-native';
-import Header from './components/Header';
-import Product from './components/Product';
-
-
+import {NavigationContainer} from '@react-navigation/native'
+import {createNativeStackNavigator} from '@react-navigation/native-stack'
+import ProductWrapper from './components/ProductWrapper';
+import UserList from './components/UserList';
+  const Stack=createNativeStackNavigator();
 const App =()  => {
-  const product=[
-        {
-          name:"Redmi 10",
-          price:'10k',
-          color:'blue',
-          image:'https://iconpacks.net/icons/2/free-mobile-phone-icon-2636-thumb.png'
-        },
 
-{
-          name:"Nokia 10",
-          price:'20k',
-          color:'white',
-          image:'https://iconpacks.net/icons/2/free-mobile-phone-icon-2636-thumb.png'
-        },
-        {
-          name:"Samsung 10",
-          price:'15k',
-          color:'skyblue',
-          image:'https://iconpacks.net/icons/2/free-mobile-phone-icon-2636-thumb.png'
-        },
-        {
-          name:"Oppo 10",
-          price:'19k',
-          color:'orange',
-          image:'https://iconpacks.net/icons/2/free-mobile-phone-icon-2636-thumb.png'
-        },
-        {
-          name:"NIki 10",
-          price:'19k',
-          color:'orange',
-          image:'https://iconpacks.net/icons/2/free-mobile-phone-icon-2636-thumb.png'
-        }
-        
 
-  ]
   return(
-    <View>
-        <Header/>
-        <ScrollView>
-          {
-            product.map((item)=>
-            <Product item={item}/>
-            )
-          }
+ 
+        
+        <NavigationContainer>
+          <Stack.Navigator>
+          <Stack.Screen name='Home' component={ProductWrapper}/>
+          <Stack.Screen name='User' component={UserList}/>
 
-        </ScrollView>
-
-    </View>
+          </Stack.Navigator>
+        </NavigationContainer>
+   
 
 
   )
